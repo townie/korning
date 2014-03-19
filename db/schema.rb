@@ -11,15 +11,46 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140319182739) do
+ActiveRecord::Schema.define(version: 20140319191418) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "customers", force: true do |t|
+    t.string   "name",       null: false
+    t.integer  "account_no", null: false
+    t.string   "URL",        null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "employees", force: true do |t|
     t.string   "first_name", null: false
     t.string   "last_name",  null: false
     t.string   "email",      null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "invoices", force: true do |t|
+    t.integer  "invoice_no", null: false
+    t.integer  "sale_id",    null: false
+    t.decimal  "amout_due",  null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "product_sales", force: true do |t|
+    t.integer  "product_id", null: false
+    t.integer  "sale_id",    null: false
+    t.integer  "sold_price", null: false
+    t.integer  "quantity",   null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "products", force: true do |t|
+    t.string   "name",       null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -33,6 +64,17 @@ ActiveRecord::Schema.define(version: 20140319182739) do
     t.integer  "units_sold"
     t.string   "invoice_no"
     t.string   "invoice_frequency"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "sales_tables", force: true do |t|
+    t.date     "sale_date",         null: false
+    t.decimal  "sale_amount",       null: false
+    t.integer  "units_sold",        null: false
+    t.string   "invoice_frequency", null: false
+    t.integer  "employee_id",       null: false
+    t.integer  "customer_id",       null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
