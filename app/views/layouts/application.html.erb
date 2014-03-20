@@ -2,11 +2,25 @@
 <html>
 <head>
   <title>Korning</title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= stylesheet_link_tag    "application", media: "all" %>
+  <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+
+<nav class="navbar navbar-default" role="navigation">
+  <div class="container-fluid">
+    <ul class= "nav navbar-nav">
+      <li><a href="/">Home</a></li>
+      <li><a href="/employees">Employees</a></li>
+      <li><a href="/sales_tables">Sales Table</a></li>
+      <li><a href="/products">Products</a></li>
+      <li><a href="/invoices">Invoices</a></li>
+    </ul>
+  </div>
+</nav>
+
+
 
 <%= yield %>
 

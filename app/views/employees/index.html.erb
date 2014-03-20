@@ -1,0 +1,22 @@
+
+<table >
+
+  <% @employees.each do |employee| %>
+  <tr>
+
+    <td>
+       <%= employee.first_name %>
+    </td>
+
+    <td>
+       <%= employee.last_name %>
+    </td>
+
+    <td>
+      <%= employee.email %>
+    </td>
+
+  </tr>
+  <% end %>
+
+</table>

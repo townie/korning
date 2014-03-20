@@ -1,0 +1,31 @@
+
+<table >
+
+  <% @sales_table.each do |sale| %>
+  <tr>
+
+     <td>
+       <%= sale.employee %>
+    </td>
+
+    <td>
+       <%= sale.sale_amount %>
+    </td>
+
+    <td>
+       <%= sale.sale_date %>
+    </td>
+
+    <td>
+      <%= sale.units_sold %>
+    </td>
+
+    <td>
+      <%= sale.customer %>
+    </td>
+
+
+  </tr>
+  <% end %>
+
+</table>

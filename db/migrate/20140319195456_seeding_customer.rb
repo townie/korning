@@ -8,6 +8,9 @@ class SeedingCustomer < ActiveRecord::Migration
       remove_column :customers, :URL
       add_column :customers, :url, :string
 
+      remove_column :customers, :account_no
+      add_column :customers, :account_no, :string
+
     Sale.find_each do |sale|
 
       tmp = sale.customer_and_account_no.split(' ')
@@ -15,7 +18,7 @@ class SeedingCustomer < ActiveRecord::Migration
       tmp[1] = tmp[1].gsub(/[()]/,'')
 
       Customer.find_or_create_by({ name: tmp[0], account_no: tmp[1]})
-      puts tmp[1]
+
     end
 
   end
@@ -23,6 +26,8 @@ class SeedingCustomer < ActiveRecord::Migration
   def down
     remove_column :customers, :url
     add_column :customers, :URL, :string
+     remove_column :customers, :account_no
+      add_column :customers, :account_no, :string
 
   end
 end
