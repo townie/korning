@@ -1,11 +1,11 @@
 
-<table >
+<table class="table table-striped">
 
-  <% @sales_table.each do |sale| %>
+  <% @sales_tables.each do |sale| %>
   <tr>
 
      <td>
-       <%= sale.employee %>
+       <%= sale.employee.first_name %>
     </td>
 
     <td>
@@ -21,7 +21,7 @@
     </td>
 
     <td>
-      <%= sale.customer %>
+      <%= sale.customer.name %>
     </td>
 
 

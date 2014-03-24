@@ -3,7 +3,7 @@ Korning::Application.routes.draw do
   resources :employees
   resources :customers
   resources :invoices
-  resources :sales_table
+  resources :sales_tables
   resources :products
 
   # The priority is based upon order of creation: first created -> highest priority.

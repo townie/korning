@@ -1,7 +1,7 @@
 class SalesTablesController < ApplicationController
 
 
-  def show_all
+  def index
 
     @sales_tables = SalesTable.all
 
